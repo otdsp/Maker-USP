@@ -227,6 +227,42 @@ button:disabled {
   text-decoration: underline;
 }
 
+/* Alinhamento do Cabeçalho do Card (Nome + Botão Sair) */
+.card-header-flex {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 16px;
+  margin-bottom: 8px;
+}
+
+.card-header-flex > div {
+  flex: 1;
+}
+
+/* Estilização Premium do Botão Sair */
+.btn-logout {
+  width: auto !important; /* Sobrescreve o 100% dos botões padrão */
+  background-color: #f1f5f9 !important; /* Cinza bem claro e neutro */
+  color: #64748b !important; /* Texto secundário discreto */
+  border: 1px solid #e2e8f0 !important;
+  padding: 8px 16px !important;
+  font-size: 0.85rem !important;
+  font-weight: 600 !important;
+  border-radius: 8px !important;
+  cursor: pointer;
+  margin-top: 0 !important;
+  box-shadow: none !important;
+  transition: var(--transition-smooth) !important;
+  white-space: nowrap;
+}
+
+.btn-logout:hover {
+  background-color: #fee2e2 !important; /* Fundo vermelho suave ao passar o mouse */
+  color: #ef4444 !important; /* Texto vermelho sutil */
+  border-color: #fca5a5 !important;
+}
+
 /* Lista de Botões de Atividades para Mobile */
 .grid-buttons {
   display: flex;
