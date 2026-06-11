@@ -1,0 +1,311 @@
+/* Configurações de Design Moderno e Responsivo */
+:root {
+  --primary-color: #0f172a;     /* Azul escuro corporativo profundo */
+  --accent-color: #f97316;      /* Laranja Maker vibrante */
+  --bg-color: #F7F6F6;          /* Integração 100% com a logo */
+  --card-bg: #ffffff;
+  --text-primary: #1e293b;      /* Texto principal confortável */
+  --text-secondary: #64748b;    /* Subtítulos elegantes */
+  --border-color: #e2e8f0;      /* Linhas finas discretas */
+  --border-radius: 16px;        /* Cantos arredondados modernos estilo iOS/Android */
+  --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+  --shadow-lg: 0 10px 25px -5px rgba(0, 0, 0, 0.05), 0 8px 10px -6px rgba(0, 0, 0, 0.05);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+  background-color: var(--bg-color);
+  color: var(--text-primary);
+  -webkit-font-smoothing: antialiased;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start; /* Permite scroll natural em ecrãs mobile compridos */
+  min-height: 100vh;
+}
+
+/* Container Responsivo */
+.container {
+  width: 100%;
+  max-width: 480px; /* Alinhamento ideal para simular uma app nativa */
+  padding: 24px 16px; /* Respiro perfeito nas margens mobile */
+  margin: 0 auto;
+}
+
+/* Cabeçalho e Destaque da Logo */
+.header {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 10px 0 16px 0; /* Dá espaço para a logo respirar no topo */
+}
+
+.logo {
+  width: 100%;
+  max-width: 240px; /* Aumentada substancialmente para marcar presença */
+  height: auto;
+  display: block;
+}
+
+/* Mensagens de Erro */
+.error-message {
+  background-color: #fff5f5;
+  color: #e53e3e;
+  padding: 16px;
+  border-radius: 12px;
+  margin-bottom: 20px;
+  border: 1px solid #fed7d7;
+  font-size: 0.9rem;
+  text-align: center;
+  font-weight: 500;
+}
+
+/* Card Principal Flutuante (Efeito App-First) */
+.form-card {
+  background: var(--card-bg);
+  padding: 32px 24px;
+  border-radius: var(--border-radius);
+  box-shadow: var(--shadow-lg);
+  border: 1px solid rgba(0, 0, 0, 0.02);
+}
+
+.form-card h2 {
+  margin: 0 0 8px 0;
+  font-size: 1.6rem;
+  font-weight: 800; /* Título bem pesado e moderno */
+  color: var(--primary-color);
+  letter-spacing: -0.5px;
+}
+
+.form-card p {
+  color: var(--text-secondary);
+  font-size: 0.95rem;
+  line-height: 1.5;
+  margin: 0 0 24px 0;
+}
+
+/* Inputs, Selects e Labels Limpos */
+label {
+  display: block;
+  font-weight: 600;
+  margin-bottom: 6px;
+  margin-top: 18px;
+  font-size: 0.85rem;
+  color: var(--primary-color);
+  letter-spacing: 0.2px;
+}
+
+input[type="text"],
+input[type="email"],
+input[type="password"],
+input[type="tel"],
+select {
+  width: 100%;
+  padding: 14px 16px;
+  border: 1px solid var(--border-color);
+  border-radius: 10px;
+  font-size: 1rem;
+  color: var(--text-primary);
+  background-color: #fafafa;
+  transition: all 0.2s ease;
+}
+
+input:focus, select:focus {
+  outline: none;
+  border-color: var(--primary-color);
+  background-color: #ffffff;
+  box-shadow: 0 0 0 4px rgba(15, 23, 42, 0.08);
+}
+
+/* Grupo de Checkboxes Organizado */
+.checkbox-group {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  margin-top: 8px;
+  background: #fafafa;
+  padding: 16px;
+  border-radius: 10px;
+  border: 1px solid var(--border-color);
+}
+
+.checkbox-label {
+  display: flex;
+  align-items: center;
+  margin: 0;
+  font-weight: 500;
+  cursor: pointer;
+  font-size: 0.95rem;
+}
+
+.checkbox-label input {
+  margin-right: 12px;
+  width: 20px; /* Maior em mobile para facilitar o clique */
+  height: 20px;
+  accent-color: var(--primary-color);
+}
+
+/* Botões de Submissão */
+button[type="submit"], .success-card button {
+  width: 100%;
+  background-color: var(--primary-color);
+  color: white;
+  border: none;
+  padding: 16px;
+  font-size: 1rem;
+  font-weight: 600;
+  border-radius: 10px;
+  cursor: pointer;
+  margin-top: 24px;
+  transition: all 0.2s ease;
+  box-shadow: 0 4px 12px rgba(15, 23, 42, 0.15);
+}
+
+button[type="submit"]:hover, .success-card button:hover {
+  background-color: #1e293b;
+}
+
+button:disabled {
+  background-color: #cbd5e1;
+  box-shadow: none;
+  cursor: not-allowed;
+}
+
+/* Container de Alternância de Telas */
+.toggle-container {
+  margin-top: 24px;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+}
+
+.toggle-container p {
+  margin: 0;
+  font-size: 0.9rem;
+  color: var(--text-secondary);
+}
+
+/* Estilo do Botão Secundário Premium */
+.btn-secondary {
+  width: 100%;
+  background-color: transparent !important;
+  color: var(--primary-color) !important;
+  border: 1px solid var(--border-color) !important;
+  padding: 14px !important;
+  font-size: 0.95rem !important;
+  font-weight: 600 !important;
+  border-radius: var(--border-radius-md) !important;
+  cursor: pointer;
+  box-shadow: none !important;
+  margin-top: 0 !important;
+  transition: var(--transition-smooth) !important;
+}
+
+.btn-secondary:hover {
+  background-color: rgba(15, 23, 42, 0.04) !important;
+  border-color: var(--primary-color) !important;
+}
+
+/* Variação específica para o botão "Voltar para o Login" parecer um link sutil */
+.btn-secondary.link-style {
+  border: none !important;
+  color: var(--text-secondary) !important;
+  font-size: 0.9rem !important;
+  margin-top: 16px !important;
+  padding: 8px !important;
+}
+
+.btn-secondary.link-style:hover {
+  background-color: transparent !important;
+  color: var(--primary-color) !important;
+  text-decoration: underline;
+}
+
+/* Alinhamento do Cabeçalho do Card (Nome + Botão Sair) */
+.card-header-flex {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 16px;
+  margin-bottom: 8px;
+}
+
+.card-header-flex > div {
+  flex: 1;
+}
+
+/* Estilização Premium do Botão Sair */
+.btn-logout {
+  width: auto !important; /* Sobrescreve o 100% dos botões padrão */
+  background-color: #f1f5f9 !important; /* Cinza bem claro e neutro */
+  color: #64748b !important; /* Texto secundário discreto */
+  border: 1px solid #e2e8f0 !important;
+  padding: 8px 16px !important;
+  font-size: 0.85rem !important;
+  font-weight: 600 !important;
+  border-radius: 8px !important;
+  cursor: pointer;
+  margin-top: 0 !important;
+  box-shadow: none !important;
+  transition: var(--transition-smooth) !important;
+  white-space: nowrap;
+}
+
+.btn-logout:hover {
+  background-color: #fee2e2 !important; /* Fundo vermelho suave ao passar o mouse */
+  color: #ef4444 !important; /* Texto vermelho sutil */
+  border-color: #fca5a5 !important;
+}
+
+/* Lista de Botões de Atividades para Mobile */
+.grid-buttons {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  margin-top: 20px;
+}
+
+.grid-buttons button {
+  background: #ffffff;
+  border: 1px solid var(--border-color);
+  border-radius: 12px;
+  padding: 16px 20px;
+  font-size: 1rem;
+  font-weight: 600;
+  color: var(--text-primary);
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  width: 100%;
+  transition: all 0.2s ease;
+}
+
+.grid-buttons button:hover {
+  border-color: var(--primary-color);
+  background-color: #fafafa;
+}
+
+.grid-buttons .icon {
+  font-size: 1.4rem; /* Ícones destacados para guiar a ação */
+}
+
+/* Feedback de Sucesso Final */
+.success-card {
+  text-align: center;
+}
+
+.success-icon {
+  font-size: 3rem;
+  margin-bottom: 12px;
+}
+
+.success-card h2 {
+  color: #16a34a;
+}
