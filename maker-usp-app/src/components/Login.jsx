@@ -10,6 +10,7 @@ export default function Login({ onRegisterClick, showMessage }) {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
+    if (loading) return;
     setLoading(true);
     try {
       await api.login(email, password);

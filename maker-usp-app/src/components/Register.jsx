@@ -26,6 +26,7 @@ export default function Register({ onBackToLogin, showMessage }) {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
+    if (loading) return;
     setLoading(true);
     try {
       await api.registerUser({
